@@ -1,0 +1,35 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 24
+    buildToolsVersion "24.0.0"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 24
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:25.0.0'
+    compile 'com.squareup.picasso:picasso:2.4.0'
+    compile 'com.kaopiz:kprogresshud:1.0.5'
+    compile files('libs/zip4j.jar')
+    compile files('libs/xUtils-2.6.14.jar')
+    compile 'com.alibaba:fastjson:1.1.46.android'
+    compile 'io.reactivex:rxjava:1.1.6'
+    compile 'com.kaopiz:kprogresshud:1.0.5'
+    compile 'com.android.support:multidex:1.0.1'
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile project(':sdk')
+}
